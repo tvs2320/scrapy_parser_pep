@@ -21,6 +21,7 @@ class PepSpider(scrapy.Spider):
         data = {
             'number': response.xpath('//h1').re_first(r'PEP \d{2,4}'),
             'name': response.css('h1.page-title::text').get(),
-            'status': response.css('dt:contains("Status") + dd').xpath('//abbr/text()').get()
+            'status': response.css(
+                'dt:contains("Status") + dd').xpath('//abbr/text()').get()
         }
         yield PepParseItem(data)
