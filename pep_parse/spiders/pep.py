@@ -1,4 +1,5 @@
 import scrapy
+
 from pep_parse.items import PepParseItem
 
 
@@ -9,7 +10,7 @@ class PepSpider(scrapy.Spider):
 
     def parse(self, response):
         """Парсер ссылок на карточки PEP."""
-        tbody = response.css('tbody')
+        tbody = response.xpath('//section[@id="numerical-index"]').css('tbody')
 
         for tr in tbody.css('tr'):
             link_pep_page = tr.css('td').css('a::attr(href)').get()

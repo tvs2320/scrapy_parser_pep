@@ -21,7 +21,7 @@ python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 4. Программа запускается из директории scrapy_parser_pep:
-`(venv) ...$ scrapy crawl pep`
+(venv) ...$ scrapy crawl pep
 
 ## Вывод данных парсера
 
